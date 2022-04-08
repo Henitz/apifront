@@ -1,0 +1,40 @@
+<!-- <p>api-list works!</p> -->
+<form class="details-form" (ngSubmit)="pesquisa()" action="">
+
+
+
+
+
+  <mat-form-field class="details-form__form-field">
+    <mat-label class="details-form__form-field__label">Id</mat-label>
+    <input name="idInformado" [(ngModel)]="nomeInformado" class="details-form__form-field__input" matInput placeholder="informe o id" value="">
+  </mat-form-field>
+  <mat-form-field class="details-form__form-field">
+    <mat-label class="details-form__form-field__label">Nome</mat-label>
+    <input name="logradouroInformado" [(ngModel)]="nomeInformado" class="details-form__form-field__input" matInput placeholder="informe o nome" value="">
+  </mat-form-field>
+  <button mat-flat-button color="primary">Pesquisar</button>
+</form>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="table-responsive">
+      <table id="excel" #excel class="table table-hover">
+        <thead>
+          <th>Id</th>
+          <th>Nome</th>
+
+
+        </thead>
+        <tbody>
+            <tr  *ngFor="let cliente of clientes">
+              <td>{{cliente.id}}</td>
+              <td>{{cliente.nome}}</td>
+            </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+
